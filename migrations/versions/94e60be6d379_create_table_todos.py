@@ -1,8 +1,8 @@
 """Create table Todos
 
-Revision ID: b10cd8dff4ac
-Revises: 5b2c3b376f81
-Create Date: 2024-12-07 18:12:06.621581
+Revision ID: 94e60be6d379
+Revises: 09cbfbf2f704
+Create Date: 2024-12-07 19:42:03.563464
 
 """
 from alembic import op
@@ -10,8 +10,8 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'b10cd8dff4ac'
-down_revision = '5b2c3b376f81'
+revision = '94e60be6d379'
+down_revision = '09cbfbf2f704'
 branch_labels = None
 depends_on = None
 

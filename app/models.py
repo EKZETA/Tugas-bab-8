@@ -17,19 +17,19 @@ class Todos(db.Model):
     updated_at = db.Column(db.DateTime, index=True, default = datetime.utcnow)
     user_id = db.Column(db.BigInteger, db.ForeignKey(Users.id))
 
-class Product(db.Model):
-    id = db.Column(db.BigInteger, primary_key = True, autoincrement = True)
-    nama = db.Column(db.String(230), nullable = False)
-    harga = db.Column(db.Integer(255), nullable = False)
-    created_at = db.Column(db.DateTime, index = True, default = datetime.utcnow)
-    updated_at = db.Column(db.DateTime, index = True, default = datetime.utcnow)
-
 class Category_product(db.Model):
     id = db.Column(db.BigInteger, primary_key = True, autoincrement = True)
     kategori = db.Column(db.String(230), nullable = False)
     created_at = db.Column(db.DateTime, index = True, default = datetime.utcnow)
     updated_at = db.Column(db.DateTime, index = True, default = datetime.utcnow)
-    product_id = db.Column(db.BigInteger, db.ForeignKey(Product.id))
 
+class Product(db.Model):
+    id = db.Column(db.BigInteger, primary_key = True, autoincrement = True)
+    nama = db.Column(db.String(230), nullable = False)
+    harga = db.Column(db.Integer, nullable = False)
+    created_at = db.Column(db.DateTime, index = True, default = datetime.utcnow)
+    updated_at = db.Column(db.DateTime, index = True, default = datetime.utcnow)
+    kategori_id = db.Column(db.BigInteger, db.ForeignKey(Category_product.id))
+    
     def __repr__(self):
         return '<user {}>'.format(self.name)
